@@ -1,0 +1,4 @@
+/node_modules
+npm-debug.log
+/public/js/app.js
+/public/css/app.css

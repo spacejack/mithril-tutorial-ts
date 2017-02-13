@@ -1,0 +1,7 @@
+body, .input, .button {
+	font: normal 16px Verdana;
+	margin: 0;
+}
+
+@import 'user-list';
+@import 'user-form';

@@ -1,0 +1,38 @@
+{
+  "name": "mithril-tutorial-ts",
+  "version": "1.0.0",
+  "description": "Mithril 1.0 Tutorial (Typescript)",
+  "author": "spacejack",
+  "license": "MIT",
+  "scripts": {
+    "serve": "http-server -p 3000 public",
+    "compile-ts": "browserify --debug src/ts/main.ts -p [ tsify --project src/ts/tsconfig.json ] -o public/js/app.js",
+    "watch-ts": "watchify -v --debug src/ts/main.ts -p [ tsify --project src/ts/tsconfig.json ] -o public/js/app.js",
+    "build-ts": "browserify src/ts/main.ts -p [ tsify --project src/ts/tsconfig.json ] | uglifyjs -cm -o public/js/app.js",
+    "compile-scss": "node-sass src/scss/app.scss | postcss --use autoprefixer -o public/css/app.css",
+    "watch-scss": "npm run compile-scss && nodemon -w src/scss -e scss -x \"npm run compile-scss\"",
+    "build-scss": "node-sass src/scss/app.scss --output-style compress | postcss --use autoprefixer -o public/css/app.css",
+    "compile": "npm-run-all compile-ts compile-scss",
+    "build": "npm-run-all build-ts build-scss",
+    "clean": "rm -f public/js/app.js public/css/app.css",
+    "start": "npm-run-all -p watch-ts watch-scss serve"
+  },
+  "dependencies": {
+    "mithril": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/mithril": "github:spacejack/mithril.d.ts#1.0.1",
+    "autoprefixer": "^6.7.2",
+    "browserify": "^14.0.0",
+    "http-server": "^0.9.0",
+    "node-sass": "^4.5.0",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.1",
+    "postcss-cli": "^2.6.0",
+    "tsify": "^3.0.1",
+    "tslint": "^4.4.2",
+    "typescript": "^2.1.6",
+    "uglify-js": "^2.7.5",
+    "watchify": "^3.9.0"
+  }
+}

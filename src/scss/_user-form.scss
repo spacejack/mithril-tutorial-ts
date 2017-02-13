@@ -1,0 +1,30 @@
+.user-form {
+	.label {
+		display:block;margin:0 0 5px;
+	}
+
+	.input {
+		border: 1px solid #ddd;
+		border-radius: 3px;
+		box-sizing: border-box;
+		display: block;
+		margin: 0 0 10px;
+		padding: 10px 15px;
+		width: 100%;
+	}
+
+	.button {
+		background: #eee;
+		border: 1px solid #ddd;
+		border-radius: 3px;
+		color: #333;
+		display: inline-block;
+		margin: 0 0 10px;
+		padding: 10px 15px;
+		text-decoration: none;
+	}
+
+	.button:hover {
+		background: #e8e8e8;
+	}
+}
