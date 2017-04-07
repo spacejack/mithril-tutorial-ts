@@ -1,6 +1,6 @@
-# [Mithril 1.1](http://mithril.js.org/) Simple App Tutorial
+# [Mithril 1.1](https://mithril.js.org/) Simple App Tutorial
 
-Typescript version adapted from: http://mithril.js.org/simple-application.html
+Typescript version adapted from: https://mithril.js.org/simple-application.html
 
 Uses types from DefinitelyTyped on npm (@types/mithril)
 

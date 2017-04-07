@@ -1,7 +1,7 @@
 {
   "name": "mithril-tutorial-ts",
   "version": "1.0.1",
-  "description": "Mithril 1.0 Tutorial (Typescript)",
+  "description": "Mithril 1.1 Tutorial (Typescript)",
   "author": "spacejack",
   "license": "MIT",
   "scripts": {
