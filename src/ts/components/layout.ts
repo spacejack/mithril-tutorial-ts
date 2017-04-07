@@ -9,4 +9,4 @@ export default {
             m("section", vnode.children)
         ])
     }
-} as Mithril.Component<{},{}>
+} as m.Component<{},{}>

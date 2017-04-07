@@ -10,8 +10,8 @@ m.route(document.body, "/list", {
 		}
 	},
 	"/edit/:id": {
-		render() {
-			return m(layout, m(userForm))
+		render(vnode) {
+			return m(layout, m(userForm, vnode.attrs))
 		}
 	}
 })

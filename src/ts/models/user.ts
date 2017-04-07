@@ -24,7 +24,7 @@ const userModel = {
 		return m.request<User>({
 			method: "GET",
 			url: "https://rem-rest-api.herokuapp.com/api/users/:id",
-			data: {id: id},
+			data: {id},
 			withCredentials: true,
 		})
 		.then(result => {
