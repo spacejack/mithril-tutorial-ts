@@ -1,7 +1,7 @@
 import * as m from 'mithril'
 
 export interface User {
-	id: string
+	id: number
 	firstName: string
 	lastName: string
 }
@@ -12,7 +12,7 @@ const userModel = {
 		return m.request<{data: User[]}>({
 			method: "GET",
 			url: "https://rem-rest-api.herokuapp.com/api/users",
-			withCredentials: true,
+			withCredentials: true
 		})
 		.then(result => {
 			userModel.list = result.data
@@ -20,12 +20,11 @@ const userModel = {
 	},
 
 	current: {} as User,
-	load (id: string) {
+	load (id: number) {
 		return m.request<User>({
 			method: "GET",
-			url: "https://rem-rest-api.herokuapp.com/api/users/:id",
-			data: {id},
-			withCredentials: true,
+			url: "https://rem-rest-api.herokuapp.com/api/users/" + id,
+			withCredentials: true
 		})
 		.then(result => {
 			userModel.current = result
@@ -35,9 +34,9 @@ const userModel = {
     save() {
         return m.request({
             method: "PUT",
-            url: "https://rem-rest-api.herokuapp.com/api/users/:id",
+            url: "https://rem-rest-api.herokuapp.com/api/users/" + userModel.current.id,
             data: userModel.current,
-            withCredentials: true,
+            withCredentials: true
         })
     }
 }

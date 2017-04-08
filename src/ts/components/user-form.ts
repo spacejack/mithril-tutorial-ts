@@ -7,7 +7,7 @@ export interface Attrs {
 
 export default {
 	oninit (vnode) {
-		userModel.load(vnode.attrs.id)
+		userModel.load(Number(vnode.attrs.id))
 	},
 
 	view() {
