@@ -1,4 +1,4 @@
-import * as m from 'mithril'
+import m from 'mithril'
 
 export interface User {
 	id: number
@@ -6,7 +6,7 @@ export interface User {
 	lastName: string
 }
 
-const userModel = {
+const UserModel = {
 	list: [] as User[],
 	loadList() {
 		return m.request<{data: User[]}>({
@@ -15,7 +15,7 @@ const userModel = {
 			withCredentials: true
 		})
 		.then(result => {
-			userModel.list = result.data
+			UserModel.list = result.data
 		})
 	},
 
@@ -27,18 +27,20 @@ const userModel = {
 			withCredentials: true
 		})
 		.then(result => {
-			userModel.current = result
+			UserModel.current = result
 		})
 	},
 
     save() {
         return m.request({
             method: "PUT",
-            url: "https://rem-rest-api.herokuapp.com/api/users/" + userModel.current.id,
-            data: userModel.current,
+            url: "https://rem-rest-api.herokuapp.com/api/users/" + UserModel.current.id,
+            data: UserModel.current,
             withCredentials: true
         })
     }
 }
 
-export default userModel
+type UserModel = typeof UserModel
+
+export default UserModel

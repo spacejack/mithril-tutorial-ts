@@ -1,17 +1,17 @@
-import * as m from 'mithril'
-import userList from './components/user-list'
-import userForm from './components/user-form'
-import layout from './components/layout'
+import m from 'mithril'
+import UserList from './components/user-list'
+import UserForm from './components/user-form'
+import Layout from './components/layout'
 
 m.route(document.body, "/list", {
 	"/list": {
 		render() {
-			return m(layout, m(userList))
+			return m(Layout, m(UserList))
 		}
 	},
 	"/edit/:id": {
 		render(vnode) {
-			return m(layout, m(userForm, vnode.attrs))
+			return m(Layout, m(UserForm, vnode.attrs))
 		}
 	}
 })

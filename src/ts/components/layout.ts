@@ -1,4 +1,4 @@
-import * as m from 'mithril'
+import m from 'mithril'
 
 export default {
     view (vnode) {
@@ -9,4 +9,4 @@ export default {
             m("section", vnode.children)
         ])
     }
-} as m.Component<{},{}>
+} as m.Component

@@ -1,5 +1,5 @@
-import * as m from 'mithril'
-import userModel from '../models/user'
+import m from 'mithril'
+import UserModel from '../models/user'
 
 export interface Attrs {
 	id: string
@@ -7,7 +7,7 @@ export interface Attrs {
 
 export default {
 	oninit (vnode) {
-		userModel.load(Number(vnode.attrs.id))
+		UserModel.load(Number(vnode.attrs.id))
 	},
 
 	view() {
@@ -15,26 +15,26 @@ export default {
 			{
 				onsubmit: (e: Event) => {
 					e.preventDefault()
-					userModel.save()
+					UserModel.save()
 				}
 			},
 			[
 				m("label.label", "First name"),
 				m("input.input[type=text][placeholder=First name]",	{
 					oninput: m.withAttr("value", value => {
-						userModel.current.firstName = value
+						UserModel.current.firstName = value
 					}),
-					value: userModel.current.firstName
+					value: UserModel.current.firstName
 				}),
 				m("label.label", "Last name"),
 				m("input.input[placeholder=Last name]", {
 					oninput: m.withAttr("value", value => {
-						userModel.current.lastName = value
+						UserModel.current.lastName = value
 					}),
-					value: userModel.current.lastName
+					value: UserModel.current.lastName
 				}),
 				m("button.button[type=submit]", "Save"),
 			]
 		)
 	}
-} as m.Component<Attrs,{}>
+} as m.Component<Attrs>
